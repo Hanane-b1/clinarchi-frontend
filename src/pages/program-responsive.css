@@ -1,0 +1,375 @@
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+/* =========================
+   PAGE
+========================= */
+.program-page {
+  min-height: 100vh;
+  padding: 14px;
+  background:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-color: #f8fafc;
+}
+
+.program-shell {
+  width: 100%;
+  max-width: 1580px;
+  margin: 0 auto;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.program-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.program-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.program-brand-text h1 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.program-brand-text p {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.home-btn {
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #64748b;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.home-btn:hover {
+  background: #f8fafc;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+.program-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+/* =========================
+   CARD
+========================= */
+.program-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+  backdrop-filter: blur(4px);
+  padding: 16px;
+}
+
+.program-card-inner {
+  padding: 14px;
+}
+
+/* =========================
+   FORM
+========================= */
+.section-title {
+  margin: 0 0 14px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.form-grid {
+  display: grid;
+  gap: 6px;
+}
+
+.form-group {
+  display: grid;
+  gap: 4px;
+}
+.form-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.form-label .optional {
+  text-transform: none;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.text-input,
+.select-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #dbe4ee;
+  border-radius: 10px;
+  background: #f8fafc;
+  padding: 0 12px;
+  font-size: 13px;
+  color: #0f172a;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.text-input::placeholder {
+  color: #94a3b8;
+}
+
+.text-input:focus,
+.select-input:focus {
+  border-color: #7dd3fc;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
+}
+
+/* =========================
+   PARKING
+========================= */
+.radio-stack {
+  display: grid;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0 12px;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 12px;
+  color: #475569;
+}
+
+.radio-option:hover {
+  border-color: #bae6fd;
+  background: #ffffff;
+}
+
+.radio-option.active {
+  border-color: #7dd3fc;
+  background: #f0f9ff;
+  color: #0284c7;
+}
+
+.radio-option input {
+  margin: 0;
+}
+
+/* =========================
+   DEPARTMENTS LIST
+========================= */
+.dept-title {
+  margin: 12px 0 8px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.dept-subtitle {
+  font-size: 11px;
+  font-weight: 500;
+  color: #cbd5e1;
+  text-transform: none;
+}
+
+.dept-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.dept-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+  border: 1px solid #eef2f7;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0 10px;
+  font-size: 12px;
+  color: #64748b;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.dept-item:hover {
+  border-color: #cbd5e1;
+  background: #ffffff;
+}
+
+.dept-item.active {
+  border-width: 2px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dept-item input {
+  margin: 0;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.generate-btn {
+  width: 100%;
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, #67c3f3 0%, #6e95ec 100%);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(59, 130, 246, 0.18);
+  transition: 0.2s ease;
+}
+
+.generate-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(59, 130, 246, 0.22);
+}
+
+.history-btn {
+  width: 100%;
+  height: 28px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-top: 8px;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.helper-text {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* =========================
+   RIGHT PANEL EMPTY STATE
+========================= */
+.preview-empty {
+  min-height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px dashed #e2e8f0;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+}
+
+.preview-empty .icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.preview-empty h3 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.preview-empty p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-width: 360px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+  .program-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .program-page {
+    padding: 10px;
+    background-size: 24px 24px;
+  }
+
+  .program-topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-btn {
+    width: 100%;
+  }
+
+  .program-card-inner {
+    padding: 12px;
+  }
+  .program-card > div {
+  margin-bottom: 6px;
+}
+
+.program-card > div:last-child {
+  margin-bottom: 0;
+}
+}
