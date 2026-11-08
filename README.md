@@ -1,16 +1,66 @@
-# React + Vite
+# 🏥 ClinArchi — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**AI-assisted spatial programming platform for hospitals and clinics.**
+ClinArchi helps architects and healthcare planners turn a clinic project brief into a complete space program: departments per floor, number of beds and rooms, net/gross areas, a floor-by-floor layout view and a professional report — in minutes instead of days.
 
-Currently, two official plugins are available:
+> Built during my Full Stack Developer internship at **Groupe Vitalys Santé** (March – April 2026).
+> Backend API: [clinarchi-backend](https://github.com/Hanane-b1/clinarchi-backend)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<!-- Add screenshots here: docs/home.png, docs/program.png, docs/report.png -->
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Project setup** — clinic name, city, number of levels (RDC → R+4), basements, parking and land surface
+- **Department builder** — choose departments (hospitalisation, technical platform, administration, …) and functional units, and assign them to floors
+- **Automatic calculations** — total beds, rooms, net area and estimated gross area
+- **Floor-by-floor layout** — generated SVG plan for each level, switchable by floor
+- **AI-generated report** — a functional report (executive summary, organisation by level, functional poles, recommendations, applied standards) written by Claude through the backend, with a local fallback report if the AI is unavailable
+- **Professional exports** — multi-sheet **Excel** (space program, surface details, summary) and **PDF** report
+- **Project history** — every generated project is saved to the database and can be reopened or deleted
 
-## Expanding the ESLint configuration
+## 🛠️ Tech stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Layer | Technologies |
+|---|---|
+| UI | React 19, Vite 7, CSS |
+| Exports | SheetJS (xlsx), jsPDF, html2canvas |
+| API | REST calls to the Laravel backend (`/api/projects`, `/api/generate-report`) |
+| Tooling | ESLint |
+
+## 🚀 Getting started
+
+**Prerequisites:** Node.js 18+ and the [backend](https://github.com/Hanane-b1/clinarchi-backend) running.
+
+```bash
+git clone https://github.com/Hanane-b1/clinarchi-frontend.git
+cd clinarchi-frontend
+npm install
+```
+
+Create `src/.env` (or `.env`) with the backend URL:
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+Then start the dev server:
+
+```bash
+npm run dev
+```
+
+The app runs on http://localhost:5173.
+
+## 📁 Project structure
+
+```
+src/
+├── components/Home.jsx   # Landing page
+├── pages/Program.jsx     # Project form, calculations, floor plans, report & exports
+├── api.js                # Calls to the Laravel API
+└── App.jsx               # Page switching
+```
+
+## 👩‍💻 Author
+
+**Hanane Belhadi** — Full Stack Developer · [GitHub](https://github.com/Hanane-b1)
